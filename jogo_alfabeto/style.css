@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body { background-color: #f0f0f0; }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-side {
+    width: 150px;
+}
+
+.timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    background: #f1c40f;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2b2171;
+    text-align: center;
+}
+
+.background-purple {
+    background-color: #2b2171;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-board {
+    background-color: #add8e6;
+    width: 80%;
+    max-width: 900px;
+    min-height: 500px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.title-banner {
+    background-color: #4da6ff;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 3px solid white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.items-container {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-item { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.image-box { font-size: 70px; }
+
+.drop-zone {
+    width: 70px; height: 70px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px dashed #333;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.letters-container {
+    display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 30px;
+}
+
+.draggable-letter {
+    width: 60px; height: 60px;
+    background-color: #e74c3c; color: white;
+    font-size: 30px; font-weight: bold;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 10px; cursor: grab; user-select: none;
+    box-shadow: 0 4px 0 #c0392b;
+}
+
+.draggable-letter:active { cursor: grabbing; }
+
+
+.controls-container { min-height: 50px; }
+.btn-action {
+    border: none; padding: 12px 30px; border-radius: 20px;
+    font-weight: bold; font-size: 1.1rem; color: white; cursor: pointer;
+}
+.btn-green { background-color: #2ecc71; box-shadow: 0 4px 0 #27ae60; }
+.btn-red { background-color: #e74c3c; box-shadow: 0 4px 0 #c0392b; }
+.hidden { display: none; }
