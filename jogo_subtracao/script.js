@@ -99,7 +99,7 @@ function verificarResposta(selecionada, botaoClicado) {
 btnProximo.addEventListener('click', () => {
     nivelAtual++;
     carregarNivel();
-});
+});  
 
 btnReiniciar.addEventListener('click', () => {
     nivelAtual = 0;
