@@ -37,32 +37,19 @@ function carregarNivel() {
     }
 
     const nivel = niveis[nivelAtual];
-<<<<<<< HEAD
     tituloNivel.innerText = `NÍVEL ${nivel.id}: SUBTRAIA OS GRUPOS`;
 
     const elementoItem = `<div class="math-item">${nivel.item}</div>`;
     
-=======
-    tituloNivel.innerText = `NÍVEL ${nivel.id}: SUBTRAÇÃO`;
-
-    const elementoItem = `<span class="math-item">${nivel.item}</span>`;
->>>>>>> b6f4f1e40d399dc23d1c058772a3d318ef9f31f6
     const grupoTotal = `<div class="image-group">${elementoItem.repeat(nivel.total)}</div>`;
     const grupoRemover = `<div class="image-group">${elementoItem.repeat(nivel.remover)}</div>`;
     
     containerConta.innerHTML = `
         ${grupoTotal}
-<<<<<<< HEAD
         <div class="operator">-</div>
         ${grupoRemover}
         <div class="operator">=</div>
         <div class="operator">?</div>
-=======
-        <span class="operator">-</span>
-        ${grupoRemover}
-        <span class="operator">=</span>
-        <span class="operator">?</span>
->>>>>>> b6f4f1e40d399dc23d1c058772a3d318ef9f31f6
     `;
 
     containerOpcoes.innerHTML = '';
@@ -99,7 +86,7 @@ function verificarResposta(selecionada, botaoClicado) {
 btnProximo.addEventListener('click', () => {
     nivelAtual++;
     carregarNivel();
-});  
+});
 
 btnReiniciar.addEventListener('click', () => {
     nivelAtual = 0;
@@ -114,15 +101,9 @@ function finalizarJogo() {
     tituloNivel.innerText = `PARABÉNS! VOCÊ COMPLETOU TUDO!`;
     
     containerConta.innerHTML = `
-<<<<<<< HEAD
         <div style="font-size: 26px; color: #3A2489; text-align: center; font-weight: bold;">
             Seu tempo final foi de: <br> 
             <span style="color: #4CAF50; font-size: 45px;">${displayCronometro.innerText.replace('⏱️ ', '')}</span>
-=======
-        <div style="font-size: 30px; text-align: center;">
-            Seu tempo final foi de: <br> 
-            <span style="color: #4CAF50; font-size: 50px;">${displayCronometro.innerText.replace('⏱️ ', '')}</span>
->>>>>>> b6f4f1e40d399dc23d1c058772a3d318ef9f31f6
         </div>
     `;
     
