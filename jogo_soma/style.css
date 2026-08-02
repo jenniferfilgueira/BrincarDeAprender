@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body { background-color: #f0f0f0; }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.nav-side { width: 150px; display: flex; justify-content: flex-end; }
+.nav-side:first-child { justify-content: flex-start; }
+.timer { font-size: 1.2rem; font-weight: bold; color: #333; background: #f1c40f; padding: 5px 15px; border-radius: 20px; }
+.logo { font-size: 24px; font-weight: bold; color: #2b2171; text-align: center; }
+.btn-yellow { background-color: #ffd700; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; color: #333; cursor: pointer; }
+
+.background-purple { background-color: #2b2171; min-height: calc(100vh - 70px); display: flex; justify-content: center; align-items: center; padding: 20px; }
+
+.game-board {
+    background-color: #add8e6; width: 90%; max-width: 1000px; min-height: 550px; border-radius: 15px;
+    display: flex; flex-direction: column; align-items: center; padding: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.title-banner { background-color: #4da6ff; color: white; padding: 10px 30px; border-radius: 20px; border: 3px solid white; font-size: 1.2rem; font-weight: bold; margin-bottom: 30px; }
+
+/* Nova Área de Itens Bagunçados */
+.scattered-container {
+    width: 100%; min-height: 120px; background-color: rgba(255,255,255,0.3); border-radius: 15px;
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; padding: 20px; margin-bottom: 30px;
+}
+
+/* Nova Área dos Quadrados (Zonas de Soltura) */
+.zones-container { display: flex; gap: 30px; margin-bottom: 30px; width: 100%; justify-content: center; flex-wrap: wrap; }
+
+.zone-wrapper { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+
+/* Zonas de Soltura (Quadrados reduzidos) */
+.drop-zone {
+    width: 150px; /* Reduzido de 200px */
+    height: 140px; /* Reduzido de 180px */
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 3px dashed #333;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    transition: background-color 0.2s;
+    position: relative; /* Necessário para posicionar a imagem de fundo */
+    overflow: hidden; /* Evita que a imagem de fundo vaze do quadrado */
+}
+
+/* Marca d'água no fundo do quadrado */
+.drop-zone::before {
+    content: attr(data-bg); /* Puxa a imagem enviada pelo JavaScript */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px; /* Tamanho da imagem de fundo */
+    opacity: 0.2; /* Deixa transparente (20% de opacidade) */
+    z-index: 0;
+    pointer-events: none; /* Impede que a marca d'água bloqueie o mouse */
+}
+
+/* Itens Arrastáveis Menores (Imagens aumentadas) */
+.draggable-item {
+    width: 50px; 
+    height: 50px; 
+    background-color: white; 
+    font-size: 35px; /* Aumentado de 25px para 35px */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px; 
+    cursor: grab; 
+    user-select: none;
+    box-shadow: 0 3px 0 #ccc;
+    z-index: 1; /* Garante que fiquem acima da marca d'água */
+}
+
+.draggable-item:active { cursor: grabbing; }
+
+/* Campo de Digitação (Input) */
+.number-input {
+    width: 80px; height: 50px; text-align: center; font-size: 1.5rem; font-weight: bold;
+    border-radius: 10px; border: 3px solid #2b2171; outline: none;
+}
+.number-input:focus { border-color: #2ecc71; }
+
+.controls-container { display: flex; gap: 15px; min-height: 50px; }
+.btn-action { border: none; padding: 12px 30px; border-radius: 20px; font-weight: bold; font-size: 1.1rem; color: white; cursor: pointer; }
+.btn-green { background-color: #2ecc71; box-shadow: 0 4px 0 #27ae60; }
+.btn-red { background-color: #e74c3c; box-shadow: 0 4px 0 #c0392b; }
+.btn-blue { background-color: #3498db; box-shadow: 0 4px 0 #2980b9; }
+.hidden { display: none; }
