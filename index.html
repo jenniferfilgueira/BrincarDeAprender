@@ -49,10 +49,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             padding: 40px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            gap: 40px;
+            gap: 20px;
+        }
+
+        .aula-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
         }
 
         .title-banner {
@@ -65,14 +72,27 @@
             font-weight: bold;
             text-align: center;
             text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.1s;
+            width: 80%;
+        }
+
+        .title-banner:active {
+            transform: scale(0.97);
         }
 
         .games-list {
-            display: flex;
+            display: none; /* Oculta a lista de jogos por padrão */
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             width: 100%;
             align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Classe que será adicionada pelo JavaScript para mostrar os jogos */
+        .games-list.mostrar {
+            display: flex; 
         }
 
         .game-link {
@@ -104,17 +124,38 @@
 
     <main class="background-purple">
         <div class="menu-board">
-            <div class="title-banner">ESCOLHA SEU JOGO</div>
             
-            <div class="games-list">
-                <a href="./jogo_alfabeto/index.html" class="game-link"> Jogo do Alfabeto</a>
-                <a href="./jogo_silaba/" class="game-link"> Jogo da Silabas</a>
-                <a href="./jogo_soma/index.html" class="game-link"> Jogo da Soma</a>
-                <a href="./jogo_subtracao/" class="game-link"> Jogo da Subtração</a>
-                <!-- próximos jogos aqui embaixo -->
-                <!-- <a href="./jogo-das-formas/index.html" class="game-link"> Jogo da Subtração</a> -->
+            <!-- AULA 00 -->
+            <div class="aula-section">
+                <!-- Adicionado o onclick -->
+                <div class="title-banner" onclick="alternarAula(this)">AULA 00</div>
+                <div class="games-list">
+                    <a href="./jogo_alfabeto/index.html" class="game-link"> Jogo do Alfabeto</a>
+                    <a href="./jogo_silaba/" class="game-link"> Jogo da Silabas</a>
+                    <a href="./jogo_soma/index.html" class="game-link"> Jogo da Soma</a>
+                    <a href="./jogo_subtracao/" class="game-link"> Jogo da Subtração</a>
+                </div>
             </div>
+
+            <!-- AULA 01 -->
+            <div class="aula-section">
+                <!-- Adicionado o onclick -->
+                <div class="title-banner" onclick="alternarAula(this)">AULA 01</div>
+                <div class="games-list">
+                    <a href="./jogo_multiplicacao/index.html" class="game-link"> Jogo da Multiplicação</a>
+                    <!-- próximos jogos aqui embaixo -->
+                </div>
+            </div>
+
         </div>
     </main>
+
+    <script>
+        function alternarAula(elementoClicado) {
+            const listaJogos = elementoClicado.nextElementSibling;
+            
+            listaJogos.classList.toggle('mostrar');
+        }
+    </script>
 </body>
 </html>
