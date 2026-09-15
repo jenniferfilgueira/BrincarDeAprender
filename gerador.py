@@ -1,2 +1,2 @@
-gerar_fase():
-    return {"pergunta": "X + Y", "resposta": Z}
+def gerar_fase():
+    return {"pergunta": "2 + 3", "resposta": 5}
