@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brincar de Aprender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div id="cronometro" class="timer">⏱️ 00:00</div>
+        <div class="logo">Brinca de Aprender</div>
+        <a href="../index.html" class="btn-yellow">Voltar</a>
+    </header>
+    
+    <main class="background-purple">
+        <div id="tela-acessibilidade" class="game-board">
+            <div class="title-container">
+                <h1 class="title-banner">Opções de Visão</h1>
+            </div>
+            <div class="instrucao-acessibilidade">Como você prefere jogar?</div>
+            <div id="container-acessibilidade">
+                <button id="btn-normal" class="option-btn">Letra Normal</button>
+                <button id="btn-grande" class="option-btn btn-grande-style">Letra Grande</button>
+            </div>
+        </div>
+
+        <div id="tela-inicio" class="game-board hidden">
+            <div class="title-container">
+                <h1 class="title-banner">Junção de Sílabas</h1>
+            </div>
+            <div id="container-inicio">
+                <button id="btn-iniciar" class="btn-green">Apertar Início</button>
+            </div>
+        </div>
+
+        <div id="tela-jogo" class="game-board hidden">
+            <div class="title-container">
+                <h2 id="titulo-fase" class="title-banner">Fase 1</h2>
+            </div>
+            
+            <div id="container-conta"></div>
+            
+            <div id="container-opcoes" class="hidden"></div>
+            
+            <div class="controles">
+                <button id="btn-proximo" class="btn-green hidden">Próximo Nível</button>
+                <button id="btn-reiniciar" class="btn-red hidden">Jogar Novamente</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

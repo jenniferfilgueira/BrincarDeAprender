@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Rounded MT Bold', 'Comic Sans MS', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timer, .btn-yellow {
+    background-color: #FFCA05;
+    color: #3A2489;
+    border: 2px solid #3A2489;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3A2489;
+}
+
+.background-purple {
+    background-color: #2A1E5C;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-board {
+    background-color: #A9DFE6;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container {
+    margin-bottom: 20px;
+}
+
+.title-banner {
+    background-color: #4BA3E3;
+    color: white;
+    border: 3px solid white;
+    border-radius: 30px;
+    padding: 10px 40px;
+    display: inline-block;
+    font-size: 1.8rem;
+}
+
+.instrucao-acessibilidade {
+    font-size: 1.8rem;
+    color: #3A2489;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+#container-acessibilidade {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-grande-style {
+    font-size: 2.2rem !important;
+    padding: 20px 40px !important;
+}
+
+#container-conta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.header-jogo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: 3px solid #3A2489;
+}
+
+.imagem-emoji {
+    font-size: 3rem;
+}
+
+.palavra-alvo {
+    font-size: 3rem;
+    color: #3A2489;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.campo-relva {
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(8, 40px);
+    gap: 2px;
+    background-color: #A5D6A7;
+    border: 5px solid #3A2489;
+    border-radius: 12px;
+    padding: 4px;
+    transition: background-color 0.2s;
+}
+
+.campo-relva.erro {
+    background-color: #F44336;
+}
+
+.celula-campo {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    position: relative;
+}
+
+.cabeca-cobra {
+    background-color: #1B5E20;
+    border-radius: 50%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    box-shadow: inset -2px -2px 0 rgba(0,0,0,0.4);
+}
+
+.corpo-cobra {
+    background-color: #4CAF50;
+    border-radius: 8px;
+    position: absolute;
+    top: 2px; left: 2px; right: 2px; bottom: 2px;
+    z-index: 1;
+}
+
+.letra-maca {
+    background-color: #E53935;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    box-shadow: inset -2px -2px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.d-pad {
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-dir {
+    background-color: #FFCA05;
+    border: 3px solid #3A2489;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 0 #3A2489;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-dir:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #3A2489;
+}
+
+.btn-up { grid-column: 2; grid-row: 1; }
+.btn-left { grid-column: 1; grid-row: 2; }
+.btn-down { grid-column: 2; grid-row: 2; }
+.btn-right { grid-column: 3; grid-row: 2; }
+
+.teclado-dica {
+    font-size: 1rem;
+    color: #3A2489;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.option-btn {
+    background-color: #ffffff;
+    color: #3A2489;
+    border: 3px solid #3A2489;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.option-btn:active {
+    transform: scale(0.95);
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-green, .btn-red {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-green { background-color: #4CAF50; }
+.btn-red { background-color: #F44336; }
+
+.hidden { display: none !important; }
+
+.tempo-final {
+    color: #4CAF50;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 15px;
+    text-shadow: 2px 2px 0px white;
+}
+
+.mensagem-final {
+    font-size: 2rem;
+    color: #3A2489;
+    font-weight: bold;
+}
+
+/* Acessibilidade - Letra Grande */
+body.fonte-grande .title-banner { font-size: 2.2rem; }
+body.fonte-grande .palavra-alvo { font-size: 4.5rem; }
+body.fonte-grande .imagem-emoji { font-size: 4.5rem; }
+body.fonte-grande .campo-relva {
+    grid-template-columns: repeat(8, 55px);
+    grid-template-rows: repeat(8, 55px);
+}
+body.fonte-grande .letra-maca { font-size: 2.2rem; }
+body.fonte-grande .d-pad {
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 80px 80px;
+}
+body.fonte-grande .btn-dir { font-size: 3rem; }
+body.fonte-grande .teclado-dica { font-size: 1.4rem; }
+body.fonte-grande .option-btn { font-size: 2.5rem; padding: 20px 40px; }
+body.fonte-grande .btn-green, body.fonte-grande .btn-red { font-size: 2rem; padding: 20px 50px; }
+body.fonte-grande .tempo-final { font-size: 5rem; }
+body.fonte-grande .mensagem-final { font-size: 2.5rem; }
