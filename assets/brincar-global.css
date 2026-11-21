@@ -1,0 +1,6 @@
+:root { font-size: clamp(18px, 1.45vw, 22px); }
+body, button, input, select { text-transform: uppercase; }
+body { font-size: clamp(18px, 1.7vw, 24px); }
+.logo img, .brand img { display:block; width:clamp(170px, 25vw, 290px); max-height:58px; object-fit:contain; }
+#btn-reiniciar { display:none !important; }
+@media (max-width: 650px) { .logo img, .brand img { width:clamp(140px, 42vw, 210px); max-height:45px; } }
